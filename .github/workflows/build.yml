@@ -1,0 +1,27 @@
+name: Build and Release Resume
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install LaTeX
+        run: sudo apt install -y latexmk texlive-latex-base texlive-fonts-recommended
+
+      - name: Build PDF
+        run: latexmk -pdf resume.tex
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: Resume Build ${{ github.run_number }}
+          files: resume.pdf
