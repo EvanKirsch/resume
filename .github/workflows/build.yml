@@ -22,6 +22,6 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: build-${{ github.run_number }}
-          name: Resume Build ${{ github.run_number }}
+          tag_name: v0.0.0.${{ github.run_number }}
+          name: resume-0.0.0.${{ github.run_number }}
           files: resume.pdf
