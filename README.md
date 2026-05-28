@@ -1,3 +1,9 @@
-# Resume
+# :bookmark_tabs: Resume
 
-TODO:
+## :hammer_and_wrench: Build
+
+```bash
+latexmk -pdf resume.tex 
+```
+
+outputs to resume.pdf

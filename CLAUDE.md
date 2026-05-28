@@ -1,11 +1,11 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code when working with code in this repository.
 
 ## Build
 
 ```bash
-pdflatex resume.tex      # compile to PDF (run twice for TOC to update)
+latexmk -pdf resume.tex 
 ```
 
 The `.gitignore` excludes all LaTeX auxiliary files and the compiled PDF.
