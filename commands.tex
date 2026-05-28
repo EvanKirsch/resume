@@ -1,14 +1,18 @@
 \newcommand{\resumesection}[1]{
+    % \rule{\textwidth}{0.4pt}
     \section{#1}
 }
 
 % Job commands
-\newcommand{\job}[5]{ 
-    \subsection{#2, #3, #1}
+\newcommand{\job}[5]{
+    \addcontentsline{toc}{subsection}{#2, \textit{#1}}
+    \noindent\textbf{#2} \hfill #3 \\
+    \textit{#1}
+    \vspace{0.2em}
 }
 
 \newcommand{\jobend}{
-    \break
+
 }
 
 \newcommand{\jobitem}[1]{
@@ -17,6 +21,10 @@
 
 \newcommand{\jobitemliststart}{
     \begin{itemize}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{0pt}
+        \setlength{\topsep}{2pt}
+        \renewcommand{\labelitemi}{-}
 }
 
 \newcommand{\jobitemlistend}{
@@ -25,5 +33,8 @@
 
 % Education commands
 \newcommand{\education}[3]{
-    \subsection{#2, #1}
+    \addcontentsline{toc}{subsection}{#2, \textit{#1}}
+    \noindent\textbf{#2} \hfill #3 \\
+    \textit{#1}
+    \vspace{0.2em}
 }
